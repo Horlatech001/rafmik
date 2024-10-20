@@ -1,0 +1,37 @@
+/* GLOBAL COLOR PALETTE */
+/* ==== Generic colors ==== */
+$clr-sea-green: #15b8ae;
+$clr-isabelline: #f2e9e4;
+$clr-rich-black-fogra-29: #011627;
+$clr-white: #fff;
+$clr-dark: #232733;
+$clr-whitesmoke: #f5f5f5;
+$clr-grey: #58585a;
+
+/* ==== Color Scheme ==== */
+// $clr-primary: #ed1c24;
+$clr-primary: #e33c41;
+$clr-primary-v1: $clr-isabelline;
+// $clr-secondary: #084f9f;
+$clr-secondary: #1d64b4;
+$clr-secondary-v1: #02172e;
+$clr-light: $clr-whitesmoke;
+
+/* ==== Common colors ==== */
+$clr-text: $clr-dark;
+// $clr-bg: ;
+// $clr-border: ;
+
+/* ==== Links colors ==== */
+$clr-link-default: $clr-dark;
+$clr-link-visited: darken($clr-dark, 20%);
+$clr-link-hover: darken($clr-link-default, 20%);
+$clr-link-active: darken($clr-link-default, 20%);
+
+/* ==== 3rd party brand colors ==== */
+$clr-twitter: #55acee;
+$clr-facebook: #3b5998;
+$clr-youtube: #cd201f;
+$clr-pinterest: #bd081c;
+$clr-instagram: #e4405f;
+$clr-whatsapp: #25d366;

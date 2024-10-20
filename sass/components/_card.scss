@@ -1,0 +1,54 @@
+.sc-list-card {
+  @include border-none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  .card-date {
+    @include font-s(15px);
+  }
+
+  .card-author {
+    @include grid-template-columns(60px auto);
+    align-items: center;
+    &-img {
+      width: 40px;
+      height: 40px;
+      @include border-r-circle;
+      overflow: hidden;
+    }
+  }
+
+  .card-img {
+    height: 320px;
+    img {
+      @include img-cover;
+    }
+  }
+
+  .card-body {
+    @include bg-color($clr-white);
+  }
+
+  .card-title {
+    @include font-s(20px);
+  }
+
+  @include pos-relative(null, null, null, null, 0);
+
+  &::after {
+    content: "";
+    @include pos-absolute(4px, 24px, -4px, 24px, -1);
+    @include bg-color($clr-secondary);
+    @include transition-default;
+  }
+
+  &:hover {
+    &::after {
+      bottom: 0;
+      top: -4px;
+    }
+
+    .card-title {
+      color: $clr-secondary;
+    }
+  }
+}

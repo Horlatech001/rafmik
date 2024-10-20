@@ -1,0 +1,56 @@
+.sc-title {
+  @include py(20px);
+  @include pos-relative;
+  margin-left: 28px;
+  margin-bottom: 32px;
+  display: inline-block !important;
+
+  h2 {
+    @include font-s(34px);
+    @include font-w("extra-bold");
+
+    @include breakpoint-down(md) {
+      @include font-s(28px!important);
+    }
+
+    @include breakpoint-down(sm) {
+      @include font-s(24px!important);
+    }
+  }
+
+  &::before {
+    content: "";
+    @include pos-absolute(null, null, 0, -28px);
+    @include bg-color($clr-secondary);
+    @include box(32px, 6px);
+  }
+
+  &::after {
+    content: "";
+    @include pos-absolute(null, null, 6px, -28px);
+    @include bg-color($clr-secondary);
+    @include box(6px, 32px);
+  }
+
+  &.sc-title-light {
+    h2 {
+      color: $clr-white;
+    }
+
+    &::before {
+      @include bg-color($clr-white);
+    }
+
+    &::after {
+      @include bg-color($clr-white);
+    }
+  }
+}
+
+.sc-title-sm {
+  h6 {
+    @include font-s(20px);
+    font-family: $font-family-karla;
+    text-transform: capitalize;
+  }
+}

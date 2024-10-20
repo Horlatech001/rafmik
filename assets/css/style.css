@@ -1,0 +1,144 @@
+.carousel-item {
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.btn-primary {
+    background-color: #FBB03B !important;
+}
+
+.contact-info-item-icon{
+    background-color: #0991A8 !important;
+}
+
+
+.carousel-caption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+}
+.lg-register{
+    gap: 30px;
+}
+.carousel-caption, h2 {
+    color: white;
+    font-size: 4rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.carousel-caption, p{
+    color: white;
+    font-size: 1.2rem;
+}
+
+.about-mini{
+    font-size: 2rem;
+}
+
+.carousel-caption > a > button{
+    background-color: #FBB03B !important;
+}
+
+.read-more{
+    background-color: #02172E !important;
+}
+
+.btn-register{
+    background-color: #FBB03B !important;
+}
+
+.job-1 {
+    height: 300px;
+    width: 300px;
+    background-image: url('../images/teaching.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.job-2 {
+    height: 300px;
+    width: 300px;
+    background-image: url('../images/healthcare.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.job-3 {
+    height: 300px;
+    width: 300px;
+    background-image: url('../images/work-process.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.job-4 {
+    height: 300px;
+    width: 300px;
+    background-image: url('../images/Warehouse-Cleaning.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.staffing{
+    font-size: 2.5rem;
+}
+
+@media (max-width: 480px) {
+    .carousel-caption{
+        width: 100%;
+        left: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .raf{
+        font-size: 38px;
+    }
+    .carousel-caption > p {
+        font-size: 18px;
+    }
+    .sc-list2{
+        margin-top: 30px;
+    }
+    .sc-list3{
+        margin-top: 80px;
+    }
+    .about-mini{
+        font-size: 30px;
+    }
+    .service-mini{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .mini-nav{
+        padding-right: 20px;
+    }
+    .navbar-show-btn{
+        color: white;
+    }
+    /* .mini-register{
+        padding-left: 20px;
+        padding-right: 20px;
+    } */
+    .lg-register{
+        gap: 0px;
+    }
+    .main-breadcrumb{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .mini-sln{
+        padding-left: 30px;
+        padding-right: 30px;
+     
+    }
+  }

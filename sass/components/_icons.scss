@@ -1,0 +1,27 @@
+.icon-lg {
+  @extend %block;
+}
+.icon-sm {
+  @extend %inline-block;
+  @include font-s(12px);
+}
+
+// social media and other icons
+.icon-twitter {
+  color: $clr-twitter;
+}
+.icon-facebook {
+  color: $clr-facebook;
+}
+.icon-instagram {
+  color: $clr-instagram;
+}
+.icon-pinterest {
+  color: $clr-pinterest;
+}
+.icon-youtube {
+  color: $clr-youtube;
+}
+.icon-whatsapp {
+  color: $clr-whatsapp;
+}

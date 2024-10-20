@@ -1,0 +1,268 @@
+.sc-features {
+  .sc-features-cnt {
+    @include breakpoint-up(lg) {
+      margin-top: -200px;
+      @include px(48px!important);
+    }
+
+    .sc-list-itm {
+      @include px(32px);
+      @include py(52px);
+      @include transition-default;
+      @include pos-relative;
+
+      &::after {
+        content: "";
+        @include pos-absolute(4px, 4px, 4px, 4px);
+        @include border(white(0.3), 0.5px);
+      }
+
+      &:hover {
+        box-shadow: rgba(149, 157, 165, 0.1) 0px 8px 24px;
+        transform: translateY(-10px);
+      }
+
+      @include bg-color($clr-white);
+
+      box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em,
+        rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
+
+      .itm-icon {
+        @include font-s(52px);
+        @include box(80px);
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 20px;
+        @include border-r-circle;
+        @include flex-center;
+        color: $clr-white;
+        background-color: $clr-secondary;
+        @include border($clr-white, 2px);
+      }
+      .itm-title {
+        @include font-s(20px);
+        letter-spacing: 1px;
+      }
+      .itm-link {
+        z-index: 2;
+        position: relative;
+      }
+    }
+  }
+}
+
+.sc-about {
+  .sc-about-cnt {
+    .block-img {
+      height: 600px;
+      overflow: hidden;
+    }
+  }
+}
+.sc-whyus {
+  min-height: 680px;
+  background: linear-gradient($clr-dark, opacity($clr-secondary, 0.8)),
+    url($img-path + "header-banner.jpg");
+  background-attachment: fixed;
+
+  .sc-whyus-cnt {
+    .sc-list {
+      &-itm {
+        @include pos-relative;
+        @include p(48px, 12px, 48px, 12px);
+        @include bg-color(black(0.25));
+
+        .itm-icon {
+          width: 70px;
+        }
+
+        &::after {
+          content: "";
+          @include pos-absolute(null, 0, 0, 0);
+          @include bg-color($clr-primary);
+          height: 4px;
+          @include transition-default;
+        }
+
+        &:hover {
+          &::after {
+            height: 100%;
+          }
+
+          .itm-icon {
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+
+          * {
+            @include pos-relative;
+            z-index: $z-low;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sc-msg {
+  .sc-msg-cnt {
+    &:hover {
+      .slick-next.slick-arrow {
+        @include fade("show");
+      }
+      .slick-prev.slick-arrow {
+        @include fade("show");
+      }
+    }
+    .sc-block-l {
+      .block-img {
+        @include img-cover;
+        height: 680px;
+        @include breakpoint-down(lg) {
+          height: 380px;
+        }
+        @include breakpoint-down(sm) {
+          height: 420px;
+        }
+      }
+    }
+    .sc-block-r {
+      @include bg-color(opacity($clr-dark, 0.03));
+      @include border(opacity($clr-dark, 0.4), 1px);
+      .msg-info {
+        &-r {
+          img {
+            max-width: 180px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sc-job-offer {
+  @include bg-color($clr-secondary-v1);
+}
+
+.sc-need {
+  .tabs-btn {
+    @include breakpoint-up(sm) {
+      @include flex-direction(row!important);
+      @include justify-content(center);
+    }
+
+    @include breakpoint-up(md) {
+      margin-top: -114px;
+    }
+
+    .tab-btn {
+      @include py(18px);
+      @include px(22px);
+      @include font-s(18px);
+      margin: 6px 0;
+      @include bg-color($clr-secondary-v1!important);
+      @include border(black(0.1) !important);
+      @include transition-default;
+      color: $clr-white;
+
+      &-active {
+        @include bg-color($clr-primary!important);
+        color: $clr-white;
+      }
+
+      &:hover {
+        border-color: black(0.3) !important;
+      }
+
+      @include breakpoint-up(sm) {
+        @include mx(6px);
+      }
+    }
+  }
+
+  .tabs-body {
+    .tab-body {
+      @include border(black(0.05));
+      @include bg-color($clr-white);
+      display: none;
+      @include opacity(0);
+      @include transition-default;
+
+      @include breakpoint-up(lg) {
+        @include p-all(24px);
+      }
+
+      &-cnt {
+        @include p-all(32px);
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+          @include font-s(22px);
+          margin-bottom: 18px;
+          opacity: 0.9;
+        }
+
+        p,
+        ul {
+          color: $clr-dark;
+          font-size: 18px;
+          @include opacity(0.9);
+          @include font-w("light");
+        }
+        ul {
+          list-style-type: disc;
+          margin-left: 24px;
+        }
+      }
+
+      &-active {
+        display: block;
+        opacity: 1;
+        @include transition-default;
+      }
+    }
+  }
+}
+
+.sc-process {
+  .sc-title {
+    &::after {
+      @include bg-color($clr-primary);
+    }
+    &::before {
+      @include bg-color($clr-primary);
+    }
+  }
+  .sc-list {
+    .sc-list-itm {
+      text-align: center;
+      .itm-circle {
+        @include box(150px);
+        @include border($clr-light, 8px);
+        @include push--auto;
+        @include border-r-circle;
+        @include pos-relative;
+        .itm-icon {
+          img {
+            width: 45px;
+            @include push--auto;
+          }
+        }
+        .itm-val {
+          @include pos-absolute(8px, -4px, null, null);
+          @include box(32px);
+          @include bg-color($clr-primary);
+          @include border-r-circle;
+          @include flex-center;
+          color: $clr-white;
+          @include font-w("bold");
+        }
+      }
+      .itm-text {
+        @include my(18px);
+      }
+    }
+  }
+}

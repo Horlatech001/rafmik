@@ -1,0 +1,58 @@
+.btn:focus {
+  outline: 0;
+  box-shadow: none;
+}
+.container {
+  @include hard--right;
+  @include hard--left;
+  @include push--auto;
+}
+ul {
+  @include flush;
+  @include hard;
+}
+.form-control {
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+// breadcrumb
+.breadcrumb {
+  .breadcrumb-item {
+    @include font-s(20px);
+    @include font-w("medium");
+  }
+}
+.form-control {
+  @include border-r-none;
+  @include py(12px);
+}
+
+// pagination
+.pagination {
+  .page-item {
+    .page-link {
+      @include border-r-none;
+      @include box(48px);
+      @include flex-center;
+      font-family: $font-family-karla;
+      @include font-w("regular");
+      @include font-s(18px);
+      @include opacity(0.6);
+      @include mx(4px);
+
+      &:hover {
+        @include bg-color($clr-white);
+      }
+    }
+
+    &-active {
+      .page-link {
+        @include bg-color($clr-secondary!important);
+        @include opacity(1);
+        color: $clr-white;
+      }
+    }
+  }
+}

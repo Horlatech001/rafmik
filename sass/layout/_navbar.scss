@@ -1,0 +1,109 @@
+.pg-navbar {
+  @include px(12px);
+  height: 72px;
+  @include bg-color($clr-white);
+  box-shadow: rgba(99, 99, 99, 0.15) 0px 2px 8px 1px;
+
+  @include breakpoint-up(sm) {
+    @include px(16px);
+  }
+
+  .navbar-brand {
+    .sm-dot {
+      @include box(6px);
+      @include bg-color($clr-primary);
+      @include border-r-circle;
+      margin-left: 4px;
+    }
+  }
+  .navbar-show-btn {
+    @include font-s(30px);
+    @include transition-default;
+
+    &:hover {
+      color: $clr-primary;
+    }
+  }
+
+  img {
+    min-width: 340px !important;
+    width: 200px !important;
+  }
+}
+
+.pg-navbar-collapse {
+  @include pos-absolute(0, null, null, 0, $z-high);
+  @include bg-color($clr-secondary-v1);
+  @include box(320px, 100%);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  transform: translateX(-100%);
+  @include transition-default;
+
+  &.show-pg-navbar-collapse {
+    transform: translateX(0);
+  }
+
+  .pg-navbar-nav-top {
+    .navbar-hide-btn {
+      @include bg-color($clr-white!important);
+      @include box(24px);
+      @include font-s(12px);
+      @include border-radius(1px);
+      @include transition-default;
+
+      &:hover {
+        @include bg-color($clr-primary!important);
+        color: $clr-white;
+      }
+    }
+  }
+
+  .pg-navbar-nav {
+    .pg-nav-item {
+      @include py(12px);
+      @include border(white(0.05), 1px, bottom);
+      .pg-nav-link {
+        color: $clr-white;
+        @include font-s(18px);
+
+        &:hover {
+          @include opacity(0.7);
+        }
+
+        &.active {
+          @include border($clr-primary, 2px, bottom);
+          padding-bottom: 2px;
+        }
+
+        @include breakpoint-up(lg) {
+          color: $clr-dark;
+          @include opacity(0.9);
+          @include font-w("semi-bold");
+          margin-left: 24px;
+          @include font-s(18px);
+        }
+
+        @include breakpoint-up(xl) {
+          @include font-s(19px);
+          margin-left: 36px;
+        }
+      }
+    }
+
+    .btn-light {
+      width: 100%;
+    }
+  }
+
+  @include breakpoint-up(lg) {
+    @include pos-relative();
+    transform: translateX(0);
+    @include box(auto, auto);
+    @include bg-none;
+    @include shadow-none;
+    @include flush--ends;
+    @include hard--ends;
+  }
+}

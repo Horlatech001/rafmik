@@ -1,0 +1,140 @@
+$btn-borderRadius: 0px;
+
+$btn-default-bgColor: $clr-dark;
+$btn-default-bgColor--highlight: darken($clr-dark, 5%);
+$btn-default-color--highlight: darken($clr-white, 5%);
+$btn-default-borderColor: $clr-dark;
+
+$btn-primary-bgColor: $clr-primary;
+$btn-primary-bgColor--highlight: darken($clr-primary, 5%);
+$btn-primary-borderColor: $clr-primary;
+
+$btn-secondary-bgColor: $clr-secondary;
+$btn-secondary-bgColor--highlight: darken($clr-secondary, 5%);
+$btn-secondary-borderColor: $clr-secondary;
+
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 100%;
+  cursor: pointer;
+  @include flush;
+  @include hard--bottom;
+  @include hard--top;
+  @include px(1.2rem);
+  overflow: visible;
+  text-align: center;
+  border-radius: $btn-borderRadius;
+  user-select: none;
+  @include bg-color($clr-dark);
+  min-height: 50px;
+  line-height: 50px;
+  letter-spacing: 1px;
+  @include font-w("medium");
+  color: $clr-white !important;
+
+  &,
+  &:link,
+  &:visited {
+    color: $clr-dark;
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    @include bg-color($btn-default-bgColor--highlight);
+    border-color: $btn-default-borderColor;
+  }
+
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &.disabled,
+  &[disabled] {
+    cursor: default;
+    background-image: none;
+    opacity: 0.5;
+  }
+
+  @include transition-default;
+}
+
+.btn-primary {
+  @include border($btn-primary-bgColor, 2px);
+  @include bg-color($btn-primary-bgColor!important);
+  &,
+  &:link,
+  &:visited {
+    color: $clr-white;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $clr-white !important;
+    @include bg-color($btn-primary-bgColor--highlight!important);
+  }
+}
+
+.btn-light {
+  @include border($clr-white, 2px);
+  @include bg-color($clr-white!important);
+  color: $clr-dark !important;
+  &,
+  &:link,
+  &:visited {
+    color: $clr-white;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $clr-dark !important;
+    @include bg-color($clr-white!important);
+  }
+}
+
+.btn-secondary {
+  @include border($btn-secondary-bgColor, 2px);
+  @include bg-color($btn-secondary-bgColor!important);
+  &,
+  &:link,
+  &:visited {
+    color: $clr-white;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    color: $clr-white !important;
+    @include bg-color($btn-secondary-bgColor--highlight!important);
+    border-color: $btn-secondary-borderColor;
+  }
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+  @include hard--left;
+  @include hard--right;
+}
+
+// Specificity overrides
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  &.btn-block {
+    width: 100%;
+  }
+}
+
+.btn-icon {
+  @include mx(12px);
+}
+
+.btn-secondary-outline {
+  @include bg-transparent;
+  color: $clr-secondary !important;
+  border-color: $clr-secondary !important;
+}

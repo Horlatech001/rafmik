@@ -1,0 +1,33 @@
+.slick-dots {
+  li {
+    button {
+      @include flex-center;
+      &::before {
+        @include transition-default;
+        @include font-s(18px);
+        color: $clr-white;
+        @include opacity(0.6);
+      }
+    }
+  }
+  margin-bottom: 3.2rem;
+}
+
+// slick arrow
+.slick-arrow {
+  transform: scale(1.2) !important;
+  @include fade("hide");
+
+  &.slick-next {
+    padding-left: 10px;
+  }
+
+  &.slick-prev {
+    margin-left: -18px !important;
+  }
+
+  &::before {
+    color: $clr-dark !important;
+    @include font-s(24px!important);
+  }
+}

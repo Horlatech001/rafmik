@@ -1,0 +1,213 @@
+.pg-wrapper {
+  overflow-x: hidden !important;
+  min-height: 100vh;
+}
+
+.pg-jobs {
+  .sc-jobs-list {
+    .sc-jobs-list-cnt {
+      overflow-x: scroll;
+      table {
+        @include breakpoint-down(xl) {
+          width: 1000px;
+        }
+
+        thead {
+          height: 52px;
+          vertical-align: middle;
+        }
+        tbody {
+          tr {
+            vertical-align: middle;
+
+            .btn {
+              height: 28px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.sc-newsletter {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)),
+    url($img-path + "/newsletter.jpg") center/cover no-repeat;
+  height: 480px;
+
+  .sc-block {
+    max-width: 600px;
+    @include push--auto;
+    p {
+      max-width: 660px;
+      @include push--auto;
+    }
+
+    .subscribe-form {
+      .form-control {
+        @include border-none;
+        @include border-r-none;
+        height: 54px;
+        &:focus,
+        &:active {
+          @include border-none;
+        }
+      }
+    }
+    .btn {
+      @include box(100%, 54px);
+      @include breakpoint-up(sm) {
+        width: auto;
+        @include px(40px);
+      }
+    }
+  }
+}
+
+.sc-search-box {
+  max-width: 480px;
+  .input-group-icon {
+    width: 50px;
+    @include border-r-none;
+    @include flex-center;
+    color: $clr-white;
+    @include font-s(22px);
+    @include bg-color($clr-dark!important);
+
+    &:hover {
+      color: $clr-light;
+    }
+  }
+}
+
+.sc-clients {
+  .clients-slider {
+    &-item {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center;
+      img {
+        max-width: 160px;
+      }
+    }
+  }
+}
+
+.sc-jobs-details {
+  .sc-jobs-details-cnt {
+    .sc-block {
+      &:nth-child(1) {
+        @include border(black(0.06), 2px);
+      }
+    }
+  }
+
+  .jobs-details-head {
+    i {
+      color: $clr-primary;
+    }
+  }
+
+  .sc-block-cnt-fill {
+    p,
+    li,
+    a {
+      @include opacity(0.9);
+      font-size: 18px;
+      @include font-w("light");
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-bottom: 16px;
+      margin-top: 18px;
+      @include font-w("extra-bold");
+    }
+    h6 {
+      @include font-s(16px);
+    }
+    h5 {
+      @include font-s(18px);
+    }
+    h4 {
+      @include font-s(20px);
+    }
+    h3 {
+      @include font-s(22px);
+    }
+    h2 {
+      @include font-s(24px);
+    }
+    h1 {
+      @include font-s(26px);
+    }
+
+    ul {
+      li {
+        @include pos-relative;
+        margin-left: 26px;
+        margin-bottom: 10px;
+        &::after {
+          @include pos-absolute(8px, null, 50%, 0);
+          content: "";
+          @include box(12px);
+          @include bg-color(lighten($clr-dark, 10%));
+          @include border-r-circle;
+          margin-left: -26px;
+        }
+      }
+    }
+    a {
+      color: $clr-secondary;
+    }
+  }
+}
+
+.aside-job-list {
+  .aside-job-list-item {
+    @include bg-color($clr-light);
+    @include border(black(0.1));
+  }
+}
+
+.sc-contact {
+  .sc-contact-cnt {
+    .sc-block-contact {
+      box-shadow: rgba(0, 0, 0, 0.05) 0px 5px 20px;
+      .contact-l {
+        .form-control {
+          @include bg-color(black(0.03));
+          @include border-none;
+        }
+      }
+      .contact-r {
+        .map {
+          iframe {
+            width: 100%;
+
+            @include breakpoint-up(lg) {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+    .sc-block-info {
+      .contact-info-item {
+        .contact-info-item-icon {
+          @include box(50px);
+          @include bg-color($clr-secondary-v1);
+          color: $clr-white;
+          @include flex-center;
+          @include font-s(24px);
+        }
+
+        @include gridbox;
+        @include grid-template-columns(70px auto);
+      }
+    }
+  }
+}

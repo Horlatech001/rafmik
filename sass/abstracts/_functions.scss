@@ -1,0 +1,57 @@
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
+}
+
+// opacity value for black and white color
+@function black($opacity) {
+  @return rgba(#000, $opacity);
+}
+
+@function white($opacity) {
+  @return rgba(#fff, $opacity);
+}
+
+@function opacity($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+// Note: You can mix two colors together in Sass using the mix function.
+@function tint($color, $percentage) {
+  @return mix(#fff, $color, $percentage);
+}
+
+@function shade($color, $percentage) {
+  @return mix(#000, $color, $percentage);
+}
+
+// half numbers
+@function half($num) {
+  @return $num / 2;
+}
+
+// Converts one px value to rem.
+// `$zero-safe-rem-value` returns a 0 if `$px-value` is 0.
+@function convert-to-rem($px-value) {
+  $rem-value: $px-value / $base-font-size;
+  $zero-safe-rem-value: if($px-value == 0, 0, $rem-value);
+  @return $zero-safe-rem-value;
+}
+
+// Converts single or multiple px values into rem.
+// Accepts multiple values in the form: `rem(20px 30px 0 40px)`.
+@function rem($px-values) {
+  $rem-values: ();
+  @each $px-value in $px-values {
+    $rem-values: append($rem-values, convert-to-rem($px-value));
+  }
+  @return $rem-values;
+}

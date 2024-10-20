@@ -1,0 +1,176 @@
+// text colors
+.text-white {
+  color: $clr-white;
+}
+.text-dark {
+  color: $clr-dark;
+}
+.text-primary {
+  color: $clr-primary !important;
+}
+.text-primary-v1 {
+  color: $clr-primary-v1;
+}
+.text-secondary {
+  color: $clr-secondary !important;
+}
+.text-secondary-v1 {
+  color: $clr-secondary-v1;
+}
+.text-light {
+  color: $clr-light;
+}
+
+// background
+.bg-dark {
+  background-color: $clr-dark;
+}
+.bg-white {
+  background-color: $clr-white;
+}
+.bg-primary {
+  background-color: $clr-primary !important;
+}
+.bg-primary-v1 {
+  background-color: $clr-primary-v1;
+}
+.bg-secondary {
+  background-color: $clr-secondary !important;
+}
+.bg-secondary-v1 {
+  background-color: $clr-secondary-v1;
+}
+.bg-light {
+  background-color: $clr-light;
+}
+
+// font family
+.font-manrope {
+  font-family: $font-family-manrope;
+}
+.font-karla {
+  font-family: $font-family-karla;
+}
+
+// font weights
+.fw-1 {
+  @include font-w("thin");
+}
+.fw-2 {
+  @include font-w("extra-light");
+}
+.fw-3 {
+  @include font-w("light");
+}
+.fw-4 {
+  @include font-w("regular");
+}
+.fw-5 {
+  @include font-w("medium");
+}
+.fw-6 {
+  @include font-w("semi-bold");
+}
+.fw-7 {
+  @include font-w("bold");
+}
+.fw-8 {
+  @include font-w("extra-bold");
+}
+.fw-9 {
+  @include font-w("ultra-bold");
+}
+
+// font size
+.fs-xx-sm {
+  font-size: map-get($font-size, "xx-sm");
+}
+.fs-x-xm {
+  font-size: map-get($font-size, "x-sm");
+}
+.fs-sm {
+  font-size: map-get($font-size, "sm");
+}
+.fs-base {
+  font-size: map-get($font-size, "base");
+}
+.fs-md {
+  font-size: map-get($font-size, "md");
+}
+.fs-lg {
+  font-size: map-get($font-size, "lg");
+}
+.fs-x-lg {
+  font-size: map-get($font-size, "x-lg");
+}
+.fs-xx-lg {
+  font-size: map-get($font-size, "xx-lg");
+}
+
+// image cover
+.img-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+// opacity
+.op-09 {
+  @include opacity(0.9);
+}
+.op-08 {
+  @include opacity(0.8);
+}
+.op-07 {
+  @include opacity(0.7);
+}
+.op-06 {
+  @include opacity(0.6);
+}
+.op-05 {
+  @include opacity(0.5);
+}
+.op-04 {
+  @include opacity(0.4);
+}
+.op-03 {
+  @include opacity(0.3);
+}
+.op-02 {
+  @include opacity(0.2);
+}
+.op-01 {
+  @include opacity(0.1);
+}
+
+// no wrap
+.no-wrap {
+  white-space: nowrap;
+}
+.resize-animation-stopper * {
+  animation: none !important;
+  transition: none !important;
+}
+
+// text
+.text-sm {
+  @include font-s(14px);
+}
+
+// lines
+.vert-line {
+  height: 20px;
+  width: 1px;
+  @include bg-color(white(0.15));
+}
+
+// letter spacing
+.ls-1 {
+  letter-spacing: 1px;
+}
+
+// text
+.text-justify {
+  text-align: justify;
+}
