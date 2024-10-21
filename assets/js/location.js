@@ -16,24 +16,15 @@ function showPosition(position) {
 
 function updateAddress(location) {
     const userCountry = location.country;  // Get country from the geocoding API response
-    const userCity = location.city;        // Get city from the geocoding API response
 
-    // Define different addresses based on location
+    // Define the Nigeria and London addresses
     let address;
     if (userCountry === "Nigeria") {
-        if (userCity === "Lagos") {
-            address = "123, Victoria Island, Lagos, Nigeria";
-        } else if (userCity === "Abuja") {
-            address = "456, Central Business District, Abuja, Nigeria";
-        } else {
-            address = "Default Nigeria Address, Nigeria";
-        }
-    } else if (userCity === "Milton Keynes") {
-        address = "17, Capital drive, Linford wood, Milton Keynes, MK14 6NG";
-    } else if (userCity === "London") {
-        address = "12, Oxford Street, London, W1D 1AR";
+        // Display Nigeria address if the user is in Nigeria
+        address = "1 Corporate Ave, Victoria Island, Lagos, Nigeria";
     } else {
-        address = "Default Global Address";
+        // Display London address for users from any foreign country
+        address = "12, Oxford Street, London, W1D 1AR";
     }
 
     // Update the HTML content dynamically
